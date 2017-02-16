@@ -22353,9 +22353,6 @@ babelHelpers;
     function $render(opt_data, opt_ignored, opt_ijData) {
       var param110 = function param110() {
         $header(opt_data, null, opt_ijData);
-        $features(null, null, opt_ijData);
-        $how(null, null, opt_ijData);
-        $highlights(null, null, opt_ijData);
         $footer(null, null, opt_ijData);
       };
       $templateAlias1(soy.$$assignDefaults({ content: param110 }, opt_data), null, opt_ijData);
@@ -22384,11 +22381,8 @@ babelHelpers;
       if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
       ie_close('h2');
       ie_open('div', null, null, 'class', 'header-cta');
-      ie_open('a', null, null, 'href', '#', 'class', 'btn btn-accent');
-      itext('Main call to action');
-      ie_close('a');
-      ie_open('a', null, null, 'href', '#', 'class', 'btn btn-default');
-      itext('Secondary action');
+      ie_open('a', null, null, 'href', 'docs/getting_started', 'class', 'btn btn-accent');
+      itext('Get started');
       ie_close('a');
       ie_close('div');
       ie_close('div');
@@ -22674,15 +22668,15 @@ babelHelpers;
   var templates;
   goog.loadModule(function (exports) {
 
-    // This file was automatically generated from markdown-post.soy.
+    // This file was automatically generated from capybara.soy.
     // Please don't edit this file by hand.
 
     /**
-     * @fileoverview Templates in namespace blogMarkdownPostHtml.
+     * @fileoverview Templates in namespace docsCapybaraHtml.
      * @public
      */
 
-    goog.module('blogMarkdownPostHtml.incrementaldom');
+    goog.module('docsCapybaraHtml.incrementaldom');
 
     /** @suppress {extraRequire} */
     var soy = goog.require('soy');
@@ -22703,7 +22697,7 @@ babelHelpers;
     var itext = IncrementalDom.text;
     var iattr = IncrementalDom.attr;
 
-    var $templateAlias1 = Soy.getTemplate('blog.incrementaldom', 'render');
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
 
     /**
      * @param {Object<string, *>=} opt_data
@@ -22714,48 +22708,778 @@ babelHelpers;
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
       opt_data = opt_data || {};
-      var param183 = function param183() {
-        ie_open('article');
-        ie_open('p');
-        ie_open('strong');
-        itext('Strong');
-        ie_close('strong');
-        itext(' Cucumber, ');
-        ie_open('a', null, null, 'href', '#');
-        itext('consectetur adipiscing elit');
+      var param132 = function param132() {
+        ie_open('h4');
+        itext('References');
+        ie_close('h4');
+        ie_open('ul');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.rubydoc.info/github/jnicklas/capybara');
+        itext('Capybara docs');
         ie_close('a');
-        itext(', sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ');
-        ie_open('em');
-        itext('ullamco');
-        ie_close('em');
-        itext(' laboris nisi ut aliquip ');
-        ie_open('strike');
-        itext('ex');
-        ie_close('strike');
-        itext(' ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        ie_close('p');
-        ie_open('blockquote');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://github.com/teamcapybara/capybara#capybara');
+        itext('More Capybara docs');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://gist.github.com/zhengjia/428105');
+        itext('Capybara cheat sheet');
+        ie_close('a');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Goals');
+        ie_close('h2');
+        ie_open('ol');
+        ie_open('li');
+        itext('Be able to configure basic Capybara settings in env.rb');
+        ie_close('li');
+        ie_open('li');
+        itext('Become familiar with Capybara DSL.');
+        ie_close('li');
+        ie_open('li');
+        itext('Understand how to do assertions using Capybara/RSpec.');
+        ie_close('li');
+        ie_open('li');
+        itext('Write a simple test using Capybara.');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('Reading');
+        ie_close('h2');
         ie_open('p');
-        itext('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
+        ie_open('a', null, null, 'href', 'https://www.sitepoint.com/basics-capybara-improving-tests/');
+        itext('Tips on improving tests with capybara');
+        ie_close('a');
+        itext('   test test test');
         ie_close('p');
-        ie_close('blockquote');
         ie_open('p');
-        itext('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
+        ie_open('a', null, null, 'href', 'http://coryschires.com/ten-tips-for-writing-better-cucumber-steps/');
+        itext('Tips for writing better cucumber steps');
+        ie_close('a');
         ie_close('p');
-        ie_open('figure');
-        ie_open('img', null, null, 'src', 'https://cloud.githubusercontent.com/assets/19154228/21908369/559710ce-d8c8-11e6-9987-9622306f1a77.png', 'alt', 'Lorem Ipsum');
-        ie_close('img');
-        ie_close('figure');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article3');
+        ie_open('h2');
+        itext('Exercises');
+        ie_close('h2');
         ie_open('p');
-        itext('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.');
+        itext('For the scenarios you\'ve already written, write the step definitions using Capybara DSL.');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Use RSpec matchers for the assertions (Then steps).');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('article');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param132 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsCapybaraHtml.render';
+    }
+
+    exports.render.params = [];
+    exports.render.types = {};
+    templates = exports;
+    return exports;
+  });
+
+  var docsCapybaraHtml = function (_Component) {
+    babelHelpers.inherits(docsCapybaraHtml, _Component);
+
+    function docsCapybaraHtml() {
+      babelHelpers.classCallCheck(this, docsCapybaraHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsCapybaraHtml.__proto__ || Object.getPrototypeOf(docsCapybaraHtml)).apply(this, arguments));
+    }
+
+    return docsCapybaraHtml;
+  }(Component);
+
+  Soy.register(docsCapybaraHtml, templates);
+  this['metalNamed']['capybara'] = this['metalNamed']['capybara'] || {};
+  this['metalNamed']['capybara']['docsCapybaraHtml'] = docsCapybaraHtml;
+  this['metalNamed']['capybara']['templates'] = templates;
+  this['metal']['capybara'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from cucumber.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsCucumberHtml.
+     * @public
+     */
+
+    goog.module('docsCucumberHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      opt_data = opt_data || {};
+      var param137 = function param137() {
+        ie_open('h4');
+        itext('References');
+        ie_close('h4');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki');
+        itext('Cucumber wiki');
+        ie_close('a');
+        ie_close('p');
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Goals');
+        ie_close('h2');
+        ie_open('ol');
+        ie_open('li');
+        itext('Explore BDD (Behavior Driven Development) concepts');
+        ie_open('ul');
+        ie_open('li');
+        itext('What is it?');
+        ie_close('li');
+        ie_open('li');
+        itext('What are some benefits of using BDD?');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_open('li');
+        itext('Understand these components of a cucumber test:');
+        ie_open('ul');
+        ie_open('li');
+        itext('Feature');
+        ie_close('li');
+        ie_open('li');
+        itext('Scenario');
+        ie_close('li');
+        ie_open('li');
+        itext('Step');
+        ie_close('li');
+        ie_open('li');
+        itext('Step Definition');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_open('li');
+        itext('Be able to run a cucumber test.');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('Reading');
+        ie_close('h2');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://blog.engineyard.com/2009/cucumber-introduction');
+        itext('Cucumber introduction');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'http://www.agile-doctor.com/2012/03/06/10-reasons-why-bdd-changes-everything/');
+        itext('Why use BDD?');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki/Feature-Introduction');
+        itext('Feature');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki/Gherkin');
+        itext('Gherkin');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki/Given-When-Then-%28new%29');
+        itext('Given-When-Then');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki/Step-Definitions');
+        itext('Step Definitions');
+        ie_close('a');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article3');
+        ie_open('h2');
+        itext('Exercises');
+        ie_close('h2');
+        ie_open('p');
+        itext('In the following exercises, you will be writing the test steps in the .feature file.  At this stage, you are not writing the step definitions.');
+        ie_close('p');
+        ie_open('p');
+        itext('To begin:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Create a \'cucumber-practice\' folder.');
+        ie_close('li');
+        ie_open('li');
+        itext('Go to the command line and run ');
+        ie_open('code');
+        itext('cucumber --init');
+        ie_close('code');
+        itext(' from this directory.');
+        ie_close('li');
+        ie_open('li');
+        itext('Create a file called \'practice.feature\' in the feature directory.');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('p');
+        itext('Write these scenarios in practice.feature.  Each scenario should contain at least one of each [Given-When-Then].');
+        ie_close('p');
+        ie_open('ol');
+        ie_open('li');
+        ie_open('p');
+        itext('Write a scenario that signs the test user in to LESA.  (Your trainer will show you the manual steps for doing this.)');
+        ie_close('p');
+        ie_close('li');
+        ie_open('li');
+        ie_open('p');
+        itext('Write a scenario that does a google search for \'Liferay\', then navigates to Liferay home page by clicking on the correct search result.');
+        ie_close('p');
+        ie_close('li');
+        ie_close('ol');
+        ie_open('p');
+        itext('Run the cucumber scenarios:');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Add the following to env.rb');
+        ie_close('li');
+        ie_close('ul');
+        $templateAlias2({ code: 'require \'selenium-webdriver\'\nrequire \'rubygems\'\nrequire \'capybara\'\nrequire \'capybara/cucumber\'\n\nCapybara.register_driver :selenium do |app|\n    Capybara::Selenium::Driver.new(app, :browser => :chrome)\nend\n\nCapybara.default_driver = :selenium', mode: 'ruby' }, null, opt_ijData);
+        ie_open('ul');
+        ie_open('li');
+        itext('At the command line, run ');
+        ie_open('code');
+        itext('cucumber features');
+        ie_close('code');
+        itext('.');
+        ie_close('li');
+        ie_open('li');
+        itext('What output do you see in the terminal?');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('article');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param137 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsCucumberHtml.render';
+    }
+
+    exports.render.params = [];
+    exports.render.types = {};
+    templates = exports;
+    return exports;
+  });
+
+  var docsCucumberHtml = function (_Component) {
+    babelHelpers.inherits(docsCucumberHtml, _Component);
+
+    function docsCucumberHtml() {
+      babelHelpers.classCallCheck(this, docsCucumberHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsCucumberHtml.__proto__ || Object.getPrototypeOf(docsCucumberHtml)).apply(this, arguments));
+    }
+
+    return docsCucumberHtml;
+  }(Component);
+
+  Soy.register(docsCucumberHtml, templates);
+  this['metalNamed']['cucumber'] = this['metalNamed']['cucumber'] || {};
+  this['metalNamed']['cucumber']['docsCucumberHtml'] = docsCucumberHtml;
+  this['metalNamed']['cucumber']['templates'] = templates;
+  this['metal']['cucumber'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['capybara'];
+
+  var docsCapybaraHtml = function (_Component) {
+    babelHelpers.inherits(docsCapybaraHtml, _Component);
+
+    function docsCapybaraHtml() {
+      babelHelpers.classCallCheck(this, docsCapybaraHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsCapybaraHtml.__proto__ || Object.getPrototypeOf(docsCapybaraHtml)).apply(this, arguments));
+    }
+
+    return docsCapybaraHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsCapybaraHtml, templates);
+
+  this['metal']['docsCapybaraHtml'] = docsCapybaraHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['cucumber'];
+
+  var docsCucumberHtml = function (_Component) {
+    babelHelpers.inherits(docsCucumberHtml, _Component);
+
+    function docsCucumberHtml() {
+      babelHelpers.classCallCheck(this, docsCucumberHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsCucumberHtml.__proto__ || Object.getPrototypeOf(docsCucumberHtml)).apply(this, arguments));
+    }
+
+    return docsCucumberHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsCucumberHtml, templates);
+
+  this['metal']['docsCucumberHtml'] = docsCucumberHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from getting-started.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsGettingStartedHtml.
+     * @public
+     */
+
+    goog.module('docsGettingStartedHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      opt_data = opt_data || {};
+      var param147 = function param147() {
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Setup Environment');
+        ie_close('h2');
+        ie_open('ol');
+        ie_open('li');
+        ie_open('p');
+        itext('Install Ruby version 2.3');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Mac OS:  ');
+        ie_open('code');
+        itext('brew install ruby');
+        ie_close('code');
+        ie_close('li');
+        ie_open('li');
+        itext('Windows:  You will also need to install Ruby DevKit');
+        ie_close('li');
+        ie_open('li');
+        itext('Ubuntu:  See the README at https://github.com/liferay/liferay-qa-ee/tree/master/testray');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_open('li');
+        ie_open('p');
+        itext('Install gems');
+        ie_close('p');
+        ie_open('p');
+        ie_open('code');
+        itext('gem install selenium-webdriver cucumber capybara rspec');
+        ie_close('code');
+        ie_close('p');
+        ie_close('li');
+        ie_open('li');
+        ie_open('p');
+        itext('Get chromedriver');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('Mac OS:  ');
+        ie_open('code');
+        itext('brew install chromedriver');
+        ie_close('code');
+        ie_close('li');
+        ie_open('li');
+        itext('Other OS:  download from https://sites.google.com/a/chromium.org/chromedriver/downloads');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('References');
+        ie_close('h2');
+        ie_open('p');
+        itext('These are some very helpful websites you should bookmark in your browser.');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://github.com/cucumber/cucumber/wiki');
+        itext('Cucumber wiki');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.rubydoc.info/github/jnicklas/capybara');
+        itext('Capybara docs');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://github.com/teamcapybara/capybara#capybara');
+        itext('More Capybara docs');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://gist.github.com/zhengjia/428105');
+        itext('Capybara cheat sheet');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://www.codecademy.com/learn/ruby');
+        itext('Ruby tutorial');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.tutorialspoint.com/ruby');
+        itext('Ruby docs/tutorial');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://regexr.com');
+        itext('RegEx learning tool');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.w3schools.com/cssref/css_selectors.asp');
+        itext('CSS selector reference');
+        ie_close('a');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('article');
+      };
+      $templateAlias1(soy.$$assignDefaults({ content: param147 }, opt_data), null, opt_ijData);
+    }
+    exports.render = $render;
+    if (goog.DEBUG) {
+      $render.soyTemplateName = 'docsGettingStartedHtml.render';
+    }
+
+    exports.render.params = [];
+    exports.render.types = {};
+    templates = exports;
+    return exports;
+  });
+
+  var docsGettingStartedHtml = function (_Component) {
+    babelHelpers.inherits(docsGettingStartedHtml, _Component);
+
+    function docsGettingStartedHtml() {
+      babelHelpers.classCallCheck(this, docsGettingStartedHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsGettingStartedHtml.__proto__ || Object.getPrototypeOf(docsGettingStartedHtml)).apply(this, arguments));
+    }
+
+    return docsGettingStartedHtml;
+  }(Component);
+
+  Soy.register(docsGettingStartedHtml, templates);
+  this['metalNamed']['getting-started'] = this['metalNamed']['getting-started'] || {};
+  this['metalNamed']['getting-started']['docsGettingStartedHtml'] = docsGettingStartedHtml;
+  this['metalNamed']['getting-started']['templates'] = templates;
+  this['metal']['getting-started'] = templates;
+  /* jshint ignore:end */
+}).call(this);
+'use strict';
+
+(function () {
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+  var templates = this['metal']['getting-started'];
+
+  var docsGettingStartedHtml = function (_Component) {
+    babelHelpers.inherits(docsGettingStartedHtml, _Component);
+
+    function docsGettingStartedHtml() {
+      babelHelpers.classCallCheck(this, docsGettingStartedHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsGettingStartedHtml.__proto__ || Object.getPrototypeOf(docsGettingStartedHtml)).apply(this, arguments));
+    }
+
+    return docsGettingStartedHtml;
+  }(Component);
+
+  ;
+
+  Soy.register(docsGettingStartedHtml, templates);
+
+  this['metal']['docsGettingStartedHtml'] = docsGettingStartedHtml;
+}).call(this);
+'use strict';
+
+(function () {
+  /* jshint ignore:start */
+  var Component = this['metal']['component'];
+  var Soy = this['metal']['Soy'];
+
+  var templates;
+  goog.loadModule(function (exports) {
+
+    // This file was automatically generated from ruby.soy.
+    // Please don't edit this file by hand.
+
+    /**
+     * @fileoverview Templates in namespace docsRubyHtml.
+     * @public
+     */
+
+    goog.module('docsRubyHtml.incrementaldom');
+
+    /** @suppress {extraRequire} */
+    var soy = goog.require('soy');
+    /** @suppress {extraRequire} */
+    var soydata = goog.require('soydata');
+    /** @suppress {extraRequire} */
+    goog.require('goog.i18n.bidi');
+    /** @suppress {extraRequire} */
+    goog.require('goog.asserts');
+    /** @suppress {extraRequire} */
+    goog.require('goog.string');
+    var IncrementalDom = goog.require('incrementaldom');
+    var ie_open = IncrementalDom.elementOpen;
+    var ie_close = IncrementalDom.elementClose;
+    var ie_void = IncrementalDom.elementVoid;
+    var ie_open_start = IncrementalDom.elementOpenStart;
+    var ie_open_end = IncrementalDom.elementOpenEnd;
+    var itext = IncrementalDom.text;
+    var iattr = IncrementalDom.attr;
+
+    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
+
+    /**
+     * @param {Object<string, *>=} opt_data
+     * @param {(null|undefined)=} opt_ignored
+     * @param {Object<string, *>=} opt_ijData
+     * @return {void}
+     * @suppress {checkTypes}
+     */
+    function $render(opt_data, opt_ignored, opt_ijData) {
+      opt_data = opt_data || {};
+      var param179 = function param179() {
+        ie_open('h4');
+        itext('References');
+        ie_close('h4');
+        ie_open('ul');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'https://www.codecademy.com/learn/ruby');
+        itext('Ruby tutorial');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.tutorialspoint.com/ruby');
+        itext('Ruby docs/tutorial');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://regexr.com');
+        itext('RegEx learning tool');
+        ie_close('a');
+        ie_close('li');
+        ie_open('li');
+        ie_open('a', null, null, 'href', 'http://www.w3schools.com/cssref/css_selectors.asp');
+        itext('CSS selector reference');
+        ie_close('a');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('article', null, null, 'id', 'article1');
+        ie_open('h2');
+        itext('Goals');
+        ie_close('h2');
+        ie_open('ol');
+        ie_open('li');
+        itext('Get to know basic Ruby syntax.');
+        ie_close('li');
+        ie_open('li');
+        itext('Be able to write code using conditional logic and loops.');
+        ie_open('ul');
+        ie_open('li');
+        itext('Know how to to loop through contents of a cucumber table.');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_open('li');
+        itext('Understand basic object oriented concepts (i.e. classes, inheritance, etc. )');
+        ie_close('li');
+        ie_open('li');
+        itext('Understand basic page object design.');
+        ie_open('ul');
+        ie_open('li');
+        itext('What are the advantages of using page objects?');
+        ie_close('li');
+        ie_close('ul');
+        ie_close('li');
+        ie_close('ol');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article2');
+        ie_open('h2');
+        itext('Reading');
+        ie_close('h2');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'http://blog.josephwilk.net/cucumber/page-object-pattern.html');
+        itext('Page object pattern');
+        ie_close('a');
+        ie_close('p');
+        ie_open('p');
+        ie_open('a', null, null, 'href', 'https://robots.thoughtbot.com/better-acceptance-tests-with-page-objects');
+        itext('Acceptance tests with page objects');
+        ie_close('a');
+        ie_close('p');
+        ie_close('article');
+        ie_open('article', null, null, 'id', 'article3');
+        ie_open('h2');
+        itext('Exercises');
+        ie_close('h2');
+        ie_open('p');
+        itext('Write the scenarios and step definitions for Exercises 1 and 2.');
+        ie_close('p');
+        ie_open('h4');
+        itext('Exercise 1');
+        ie_close('h4');
+        ie_open('ol');
+        ie_open('li');
+        itext('Sign in to https://www-support-2.liferay.com/group/customer');
+        ie_close('li');
+        ie_open('li');
+        itext('Navigate to LESA Search page');
+        ie_close('li');
+        ie_open('li');
+        itext('Do a keyword search for "QAPROJECT1"');
+        ie_close('li');
+        ie_open('li');
+        itext('Assert that 1 or more result rows are displayed');
+        ie_close('li');
+        ie_open('li');
+        itext('Print to console the number of tickets found');
+        ie_close('li');
+        ie_close('ol');
+        ie_open('h4');
+        itext('Exercise 2');
+        ie_close('h4');
+        ie_open('p');
+        itext('Same as above, except steps 3 to 5 will be repeated for multiple projects:');
+        ie_close('p');
+        ie_open('p');
+        itext('Use a cucumber table in the feature file and use the table methods to loop through each of those projects.');
+        ie_close('p');
+        ie_open('ul');
+        ie_open('li');
+        itext('QAPROJECT1');
+        ie_close('li');
+        ie_open('li');
+        itext('QAPROJECT2');
+        ie_close('li');
+        ie_open('li');
+        itext('THESPACEPRO');
+        ie_close('li');
+        ie_close('ul');
+        ie_open('h4');
+        itext('Exercise 3');
+        ie_close('h4');
+        ie_open('p');
+        itext('Create a page object for the LESA Search page.  Include "element locator" and "action" methods you need from the previous exercise.  Refactor the step definitions from the previous exercise to use the page object.');
+        ie_close('p');
+        ie_open('h3');
+        itext('Bonus');
+        ie_close('h3');
+        ie_open('p');
+        itext('Can you figure out how to use cucumber tags to run a single scenario?');
         ie_close('p');
         ie_close('article');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param183 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param179 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
-      $render.soyTemplateName = 'blogMarkdownPostHtml.render';
+      $render.soyTemplateName = 'docsRubyHtml.render';
     }
 
     exports.render.params = [];
@@ -22764,22 +23488,22 @@ babelHelpers;
     return exports;
   });
 
-  var blogMarkdownPostHtml = function (_Component) {
-    babelHelpers.inherits(blogMarkdownPostHtml, _Component);
+  var docsRubyHtml = function (_Component) {
+    babelHelpers.inherits(docsRubyHtml, _Component);
 
-    function blogMarkdownPostHtml() {
-      babelHelpers.classCallCheck(this, blogMarkdownPostHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogMarkdownPostHtml.__proto__ || Object.getPrototypeOf(blogMarkdownPostHtml)).apply(this, arguments));
+    function docsRubyHtml() {
+      babelHelpers.classCallCheck(this, docsRubyHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsRubyHtml.__proto__ || Object.getPrototypeOf(docsRubyHtml)).apply(this, arguments));
     }
 
-    return blogMarkdownPostHtml;
+    return docsRubyHtml;
   }(Component);
 
-  Soy.register(blogMarkdownPostHtml, templates);
-  this['metalNamed']['markdown-post'] = this['metalNamed']['markdown-post'] || {};
-  this['metalNamed']['markdown-post']['blogMarkdownPostHtml'] = blogMarkdownPostHtml;
-  this['metalNamed']['markdown-post']['templates'] = templates;
-  this['metal']['markdown-post'] = templates;
+  Soy.register(docsRubyHtml, templates);
+  this['metalNamed']['ruby'] = this['metalNamed']['ruby'] || {};
+  this['metalNamed']['ruby']['docsRubyHtml'] = docsRubyHtml;
+  this['metalNamed']['ruby']['templates'] = templates;
+  this['metal']['ruby'] = templates;
   /* jshint ignore:end */
 }).call(this);
 'use strict';
@@ -22787,431 +23511,24 @@ babelHelpers;
 (function () {
   var Component = this['metal']['component'];
   var Soy = this['metal']['Soy'];
-  var templates = this['metal']['markdown-post'];
+  var templates = this['metal']['ruby'];
 
-  var blogMarkdownPostHtml = function (_Component) {
-    babelHelpers.inherits(blogMarkdownPostHtml, _Component);
+  var docsRubyHtml = function (_Component) {
+    babelHelpers.inherits(docsRubyHtml, _Component);
 
-    function blogMarkdownPostHtml() {
-      babelHelpers.classCallCheck(this, blogMarkdownPostHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogMarkdownPostHtml.__proto__ || Object.getPrototypeOf(blogMarkdownPostHtml)).apply(this, arguments));
+    function docsRubyHtml() {
+      babelHelpers.classCallCheck(this, docsRubyHtml);
+      return babelHelpers.possibleConstructorReturn(this, (docsRubyHtml.__proto__ || Object.getPrototypeOf(docsRubyHtml)).apply(this, arguments));
     }
 
-    return blogMarkdownPostHtml;
+    return docsRubyHtml;
   }(Component);
 
   ;
 
-  Soy.register(blogMarkdownPostHtml, templates);
+  Soy.register(docsRubyHtml, templates);
 
-  this['metal']['blogMarkdownPostHtml'] = blogMarkdownPostHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from test.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace blogTestHtml.
-     * @public
-     */
-
-    goog.module('blogTestHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('blog.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param193 = function param193() {
-        ie_open('article');
-        ie_open('p');
-        ie_open('strong');
-        itext('Strong');
-        ie_close('strong');
-        itext(' Cucumber, ');
-        ie_open('a', null, null, 'href', '#');
-        itext('consectetur adipiscing elit');
-        ie_close('a');
-        itext(', sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ');
-        ie_open('em');
-        itext('ullamco');
-        ie_close('em');
-        itext(' laboris nisi ut aliquip ');
-        ie_open('strike');
-        itext('ex');
-        ie_close('strike');
-        itext(' ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        ie_close('p');
-        ie_open('blockquote');
-        ie_open('p');
-        itext('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
-        ie_close('p');
-        ie_close('blockquote');
-        ie_open('p');
-        itext('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
-        ie_close('p');
-        ie_open('figure');
-        ie_open('img', null, null, 'src', 'https://cloud.githubusercontent.com/assets/19154228/21908369/559710ce-d8c8-11e6-9987-9622306f1a77.png', 'alt', 'Lorem Ipsum');
-        ie_close('img');
-        ie_close('figure');
-        ie_open('p');
-        itext('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param193 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'blogTestHtml.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var blogTestHtml = function (_Component) {
-    babelHelpers.inherits(blogTestHtml, _Component);
-
-    function blogTestHtml() {
-      babelHelpers.classCallCheck(this, blogTestHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogTestHtml.__proto__ || Object.getPrototypeOf(blogTestHtml)).apply(this, arguments));
-    }
-
-    return blogTestHtml;
-  }(Component);
-
-  Soy.register(blogTestHtml, templates);
-  this['metalNamed']['test'] = this['metalNamed']['test'] || {};
-  this['metalNamed']['test']['blogTestHtml'] = blogTestHtml;
-  this['metalNamed']['test']['templates'] = templates;
-  this['metal']['test'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['test'];
-
-  var blogTestHtml = function (_Component) {
-    babelHelpers.inherits(blogTestHtml, _Component);
-
-    function blogTestHtml() {
-      babelHelpers.classCallCheck(this, blogTestHtml);
-      return babelHelpers.possibleConstructorReturn(this, (blogTestHtml.__proto__ || Object.getPrototypeOf(blogTestHtml)).apply(this, arguments));
-    }
-
-    return blogTestHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(blogTestHtml, templates);
-
-  this['metal']['blogTestHtml'] = blogTestHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageBlogIndex.
-     * @public
-     */
-
-    goog.module('pageBlogIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {}
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageBlogIndex.render';
-    }
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $soyweb(opt_data, opt_ignored, opt_ijData) {
-      ie_open('!DOCTYPE', null, null, 'html', '');
-      ie_open('html', null, null, 'lang', 'en');
-      ie_open('head');
-      ie_open('meta', null, null, 'charset', 'UTF-8');
-      ie_close('meta');
-      ie_open('meta', null, null, 'http-equiv', 'refresh', 'content', '0; URL=\'' + opt_data.page.redirect + '\'');
-      ie_close('meta');
-      ie_close('head');
-      ie_close('html');
-    }
-    exports.soyweb = $soyweb;
-    if (goog.DEBUG) {
-      $soyweb.soyTemplateName = 'pageBlogIndex.soyweb';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    exports.soyweb.params = ["page"];
-    exports.soyweb.types = { "page": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var pageBlogIndex = function (_Component) {
-    babelHelpers.inherits(pageBlogIndex, _Component);
-
-    function pageBlogIndex() {
-      babelHelpers.classCallCheck(this, pageBlogIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogIndex.__proto__ || Object.getPrototypeOf(pageBlogIndex)).apply(this, arguments));
-    }
-
-    return pageBlogIndex;
-  }(Component);
-
-  Soy.register(pageBlogIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['pageBlogIndex'] = pageBlogIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from soy-post.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace pageBlogFirstPost.
-     * @public
-     */
-
-    goog.module('pageBlogFirstPost.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias1 = Soy.getTemplate('blog.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param188 = function param188() {
-        ie_open('section');
-        ie_open('p');
-        ie_open('strong');
-        itext('Lorem ipsum');
-        ie_close('strong');
-        itext(' dolor sit amet, ');
-        ie_open('a', null, null, 'href', '#');
-        itext('consectetur adipiscing elit');
-        ie_close('a');
-        itext(', sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ');
-        ie_open('em');
-        itext('ullamco');
-        ie_close('em');
-        itext(' laboris nisi ut aliquip ');
-        ie_open('strike');
-        itext('ex');
-        ie_close('strike');
-        itext(' ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.');
-        ie_close('p');
-        ie_open('blockquote');
-        itext('Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.');
-        ie_close('blockquote');
-        ie_open('p');
-        itext('Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?');
-        ie_close('p');
-        ie_open('figure');
-        ie_open('img', null, null, 'src', 'https://cloud.githubusercontent.com/assets/19154228/21908369/559710ce-d8c8-11e6-9987-9622306f1a77.png', 'alt', 'Lorem Ipsum');
-        ie_close('img');
-        ie_close('figure');
-        ie_open('p');
-        itext('At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.');
-        ie_close('p');
-        ie_close('section');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param188 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'pageBlogFirstPost.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var pageBlogFirstPost = function (_Component) {
-    babelHelpers.inherits(pageBlogFirstPost, _Component);
-
-    function pageBlogFirstPost() {
-      babelHelpers.classCallCheck(this, pageBlogFirstPost);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogFirstPost.__proto__ || Object.getPrototypeOf(pageBlogFirstPost)).apply(this, arguments));
-    }
-
-    return pageBlogFirstPost;
-  }(Component);
-
-  Soy.register(pageBlogFirstPost, templates);
-  this['metalNamed']['soy-post'] = this['metalNamed']['soy-post'] || {};
-  this['metalNamed']['soy-post']['pageBlogFirstPost'] = pageBlogFirstPost;
-  this['metalNamed']['soy-post']['templates'] = templates;
-  this['metal']['soy-post'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['soy-post'];
-
-  var pageBlogFirstPost = function (_Component) {
-    babelHelpers.inherits(pageBlogFirstPost, _Component);
-
-    function pageBlogFirstPost() {
-      babelHelpers.classCallCheck(this, pageBlogFirstPost);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogFirstPost.__proto__ || Object.getPrototypeOf(pageBlogFirstPost)).apply(this, arguments));
-    }
-
-    return pageBlogFirstPost;
-  }(Component);
-
-  ;
-
-  Soy.register(pageBlogFirstPost, templates);
-
-  this['metal']['pageBlogFirstPost'] = pageBlogFirstPost;
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var pageBlogIndex = function (_Component) {
-    babelHelpers.inherits(pageBlogIndex, _Component);
-
-    function pageBlogIndex() {
-      babelHelpers.classCallCheck(this, pageBlogIndex);
-      return babelHelpers.possibleConstructorReturn(this, (pageBlogIndex.__proto__ || Object.getPrototypeOf(pageBlogIndex)).apply(this, arguments));
-    }
-
-    return pageBlogIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(pageBlogIndex, templates);
-
-  this['metal']['pageBlogIndex'] = pageBlogIndex;
+  this['metal']['docsRubyHtml'] = docsRubyHtml;
 }).call(this);
 'use strict';
 
@@ -23266,11 +23583,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param136 = function param136() {
+      var param153 = function param153() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         $topics(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param136 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param153 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23293,10 +23610,7 @@ babelHelpers;
       itext('Docs');
       ie_close('h1');
       ie_open('p', null, null, 'class', 'docs-home-top-description');
-      itext('Start learning how to leverage the power of ');
-      var dyn14 = opt_data.site.title;
-      if (typeof dyn14 == 'function') dyn14();else if (dyn14 != null) itext(dyn14);
-      itext(' in your project.');
+      itext('Start learning how to leverage the power of Cucumber in your project.');
       ie_close('p');
       ie_close('div');
       ie_close('div');
@@ -23325,28 +23639,25 @@ babelHelpers;
       ie_open('h2', null, null, 'class', 'docs-home-middle-subtitle');
       itext('Choose a Guide');
       ie_close('h2');
-      ie_open('p', null, null, 'class', 'docs-home-middle-description');
-      itext('Each one provide step by step coverage for every core feature.');
-      ie_close('p');
       ie_close('section');
       ie_close('div');
       ie_close('div');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
       ie_open('div', null, null, 'class', 'row');
-      var topicList159 = opt_data.site.index.children[1].children;
-      var topicListLen159 = topicList159.length;
-      for (var topicIndex159 = 0; topicIndex159 < topicListLen159; topicIndex159++) {
-        var topicData159 = topicList159[topicIndex159];
-        if (!topicData159.hidden) {
+      var topicList174 = opt_data.site.index.children[1].children;
+      var topicListLen174 = topicList174.length;
+      for (var topicIndex174 = 0; topicIndex174 < topicListLen174; topicIndex174++) {
+        var topicData174 = topicList174[topicIndex174];
+        if (!topicData174.hidden) {
           ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData159.url);
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData174.url);
           ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData159.icon);
+          ie_void('span', null, null, 'class', 'icon-16-' + topicData174.icon);
           ie_close('div');
           ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn15 = topicData159.title;
-          if (typeof dyn15 == 'function') dyn15();else if (dyn15 != null) itext(dyn15);
+          var dyn14 = topicData174.title;
+          if (typeof dyn14 == 'function') dyn14();else if (dyn14 != null) itext(dyn14);
           ie_close('h3');
           ie_close('a');
           ie_close('div');
@@ -23467,7 +23778,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param165 = function param165() {
+      var param185 = function param185() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
@@ -23492,7 +23803,7 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param165 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param185 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23546,1272 +23857,6 @@ babelHelpers;
   Soy.register(pageDocsSearch, templates);
 
   this['metal']['pageDocsSearch'] = pageDocsSearch;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace updatesIndex.
-     * @public
-     */
-
-    goog.module('updatesIndex.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricUpdates.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('main.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      var param198 = function param198() {
-        ie_open('div');
-        ie_open('header', null, null, 'class', 'header');
-        ie_open('div', null, null, 'class', 'container');
-        ie_open('h1', null, null, 'class', 'header-title');
-        itext('Updates');
-        ie_close('h1');
-        ie_open('h1', null, null, 'class', 'header-subtitle');
-        itext('Check out what\'s new.');
-        ie_close('h1');
-        ie_close('div');
-        ie_close('header');
-        $templateAlias2({ updates: opt_data.page.updates }, null, opt_ijData);
-        ie_close('div');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param198 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'updatesIndex.render';
-    }
-
-    exports.render.params = ["page"];
-    exports.render.types = { "page": "any" };
-    templates = exports;
-    return exports;
-  });
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  Soy.register(updatesIndex, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['updatesIndex'] = updatesIndex;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var updatesIndex = function (_Component) {
-    babelHelpers.inherits(updatesIndex, _Component);
-
-    function updatesIndex() {
-      babelHelpers.classCallCheck(this, updatesIndex);
-      return babelHelpers.possibleConstructorReturn(this, (updatesIndex.__proto__ || Object.getPrototypeOf(updatesIndex)).apply(this, arguments));
-    }
-
-    return updatesIndex;
-  }(Component);
-
-  ;
-
-  Soy.register(updatesIndex, templates);
-
-  this['metal']['updatesIndex'] = updatesIndex;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsBuild.
-     * @public
-     */
-
-    goog.module('docsBuild.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param206 = function param206() {
-        ie_open('h6');
-        itext('Interessantiss quisso pudia ce receita de bolis, mais bolis eu num gostis. Suco de cevadiss deixa as pessoas mais interessantiss. Vehicula non. Ut sed ex eros. Vivamus sit amet nibh non tellus tristique interdum.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        $templateAlias2({ code: 'var hello = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param206 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsBuild.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsBuild = function (_Component) {
-    babelHelpers.inherits(docsBuild, _Component);
-
-    function docsBuild() {
-      babelHelpers.classCallCheck(this, docsBuild);
-      return babelHelpers.possibleConstructorReturn(this, (docsBuild.__proto__ || Object.getPrototypeOf(docsBuild)).apply(this, arguments));
-    }
-
-    return docsBuild;
-  }(Component);
-
-  Soy.register(docsBuild, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsBuild'] = docsBuild;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var docsBuild = function (_Component) {
-    babelHelpers.inherits(docsBuild, _Component);
-
-    function docsBuild() {
-      babelHelpers.classCallCheck(this, docsBuild);
-      return babelHelpers.possibleConstructorReturn(this, (docsBuild.__proto__ || Object.getPrototypeOf(docsBuild)).apply(this, arguments));
-    }
-
-    return docsBuild;
-  }(Component);
-
-  ;
-
-  Soy.register(docsBuild, templates);
-
-  this['metal']['docsBuild'] = docsBuild;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsCreate.
-     * @public
-     */
-
-    goog.module('docsCreate.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param226 = function param226() {
-        ie_open('h6');
-        itext('Mussum Ipsum, cacilds vidis litro abertis. Paisis, filhis, espiritis santis. A ordem dos tratores n\xE3o altera o p\xE3o duris Praesent vel viverra nisi. Mauris aliquet nunc non turpis scelerisque, eget. Ta deprimidis, eu conhe\xE7o uma cachacis que pode alegrar sua vidis.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Mauris iaculis, lectus sagittis consequat accumsan, tellus neque blandit justo, a consectetur odio turpis a magna. In ac euismod diam. Praesent non elementum turpis. Aliquam vitae vestibulum arcu. Praesent eleifend turpis arcu.');
-        ie_close('p');
-        $templateAlias2({ code: 'var hi = function() {\n    console.log(\'Hello, World!\');\n};', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Nunc eros risus, scelerisque sit amet magna at, venenatis mattis metus. Pellentesque scelerisque facilisis sagittis. Integer at eleifend urna, nec vehicula nibh. Morbi a fermentum purus. Mauris augue erat, consectetur quis massa ac, commodo vehicula augue. Cras in odio volutpat, maximus nunc eleifend, scelerisque erat. In hac habitasse platea dictumst.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param226 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsCreate.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsCreate = function (_Component) {
-    babelHelpers.inherits(docsCreate, _Component);
-
-    function docsCreate() {
-      babelHelpers.classCallCheck(this, docsCreate);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreate.__proto__ || Object.getPrototypeOf(docsCreate)).apply(this, arguments));
-    }
-
-    return docsCreate;
-  }(Component);
-
-  Soy.register(docsCreate, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsCreate'] = docsCreate;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var docsCreate = function (_Component) {
-    babelHelpers.inherits(docsCreate, _Component);
-
-    function docsCreate() {
-      babelHelpers.classCallCheck(this, docsCreate);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreate.__proto__ || Object.getPrototypeOf(docsCreate)).apply(this, arguments));
-    }
-
-    return docsCreate;
-  }(Component);
-
-  ;
-
-  Soy.register(docsCreate, templates);
-
-  this['metal']['docsCreate'] = docsCreate;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from etiam.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsCreateEtiamHtml.
-     * @public
-     */
-
-    goog.module('docsCreateEtiamHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param216 = function param216() {
-        ie_open('h6');
-        itext('Quem num gosti di mum que vai ca\xE7\xE1 sua turmis! Quem manda na minha terra sou Euzis! Sapien in monti palavris qui num significa nadis i pareci latim. Copo furadis \xE9 disculpa de bebadis, arcu quam euismod magna.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque varius mattis mollis. Praesent rutrum tempor libero sit amet blandit. Integer ante nisl, rutrum ut volutpat ut, rutrum id tortor. Duis placerat ut ipsum id aliquam. Nunc venenatis sem ac urna viverra, eu euismod sapien porttitor.');
-        ie_close('p');
-        $templateAlias2({ code: 'body {\n    overflow: hidden;\n}', mode: 'css' }, null, opt_ijData);
-        ie_open('p');
-        itext('Nulla a suscipit nibh. Duis tincidunt elit tellus, ut volutpat lectus pharetra at. Nulla quis nisi ante. Maecenas vulputate convallis lorem. Vestibulum at ex id sapien faucibus vehicula. Sed porta dui in velit semper blandit. Ut in commodo magna. Morbi luctus enim et lectus luctus ullamcorper. Proin tellus erat, convallis vitae metus vitae, lacinia consectetur turpis.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param216 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsCreateEtiamHtml.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsCreateEtiamHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateEtiamHtml, _Component);
-
-    function docsCreateEtiamHtml() {
-      babelHelpers.classCallCheck(this, docsCreateEtiamHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateEtiamHtml.__proto__ || Object.getPrototypeOf(docsCreateEtiamHtml)).apply(this, arguments));
-    }
-
-    return docsCreateEtiamHtml;
-  }(Component);
-
-  Soy.register(docsCreateEtiamHtml, templates);
-  this['metalNamed']['etiam'] = this['metalNamed']['etiam'] || {};
-  this['metalNamed']['etiam']['docsCreateEtiamHtml'] = docsCreateEtiamHtml;
-  this['metalNamed']['etiam']['templates'] = templates;
-  this['metal']['etiam'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['etiam'];
-
-  var docsCreateEtiamHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateEtiamHtml, _Component);
-
-    function docsCreateEtiamHtml() {
-      babelHelpers.classCallCheck(this, docsCreateEtiamHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateEtiamHtml.__proto__ || Object.getPrototypeOf(docsCreateEtiamHtml)).apply(this, arguments));
-    }
-
-    return docsCreateEtiamHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsCreateEtiamHtml, templates);
-
-  this['metal']['docsCreateEtiamHtml'] = docsCreateEtiamHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from lorem.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsCreateLoremHtml.
-     * @public
-     */
-
-    goog.module('docsCreateLoremHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param236 = function param236() {
-        ie_open('h6');
-        itext('Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. M\xE9 faiz elementum girarzis, nisi eros vermeio. Suco de cevadiss deixa as pessoas mais interessantiss. Cevadis im ampola pa arma uma pindureta.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        $templateAlias2({ code: '<p>Test, test, test</p>', mode: 'xml' }, null, opt_ijData);
-        ie_open('p');
-        itext('Nam eu lobortis ipsum. Sed iaculis, lectus pharetra vehicula luctus, lacus sapien malesuada lacus, non convallis dui mauris a magna. Donec accumsan mi lorem, quis mollis sem tempor vel. Fusce iaculis facilisis accumsan. Sed tempus aliquam nisi, eget commodo quam sodales ut. Duis lacus velit, fringilla congue aliquet nec, vulputate vitae nulla. Aenean ultricies risus vel sapien tincidunt, nec hendrerit purus aliquam. Quisque varius accumsan condimentum. Aliquam erat volutpat.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param236 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsCreateLoremHtml.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsCreateLoremHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateLoremHtml, _Component);
-
-    function docsCreateLoremHtml() {
-      babelHelpers.classCallCheck(this, docsCreateLoremHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateLoremHtml.__proto__ || Object.getPrototypeOf(docsCreateLoremHtml)).apply(this, arguments));
-    }
-
-    return docsCreateLoremHtml;
-  }(Component);
-
-  Soy.register(docsCreateLoremHtml, templates);
-  this['metalNamed']['lorem'] = this['metalNamed']['lorem'] || {};
-  this['metalNamed']['lorem']['docsCreateLoremHtml'] = docsCreateLoremHtml;
-  this['metalNamed']['lorem']['templates'] = templates;
-  this['metal']['lorem'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['lorem'];
-
-  var docsCreateLoremHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateLoremHtml, _Component);
-
-    function docsCreateLoremHtml() {
-      babelHelpers.classCallCheck(this, docsCreateLoremHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateLoremHtml.__proto__ || Object.getPrototypeOf(docsCreateLoremHtml)).apply(this, arguments));
-    }
-
-    return docsCreateLoremHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsCreateLoremHtml, templates);
-
-  this['metal']['docsCreateLoremHtml'] = docsCreateLoremHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from nula.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsCreateNulaHtml.
-     * @public
-     */
-
-    goog.module('docsCreateNulaHtml.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param246 = function param246() {
-        ie_open('h6');
-        itext('Viva Forevis aptent taciti sociosqu ad litora torquent Nec orci ornare consequat. Praesent lacinia ultrices consectetur. Sed non ipsum felis. Pra l\xE1 , depois divoltis porris, paradis. Delegadis gente finis, bibendum egestas augue arcu ut est.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        $templateAlias2({ code: 'var oi = function() {\n    console.log(\'Oi mundo\');\n};', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param246 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsCreateNulaHtml.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsCreateNulaHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateNulaHtml, _Component);
-
-    function docsCreateNulaHtml() {
-      babelHelpers.classCallCheck(this, docsCreateNulaHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateNulaHtml.__proto__ || Object.getPrototypeOf(docsCreateNulaHtml)).apply(this, arguments));
-    }
-
-    return docsCreateNulaHtml;
-  }(Component);
-
-  Soy.register(docsCreateNulaHtml, templates);
-  this['metalNamed']['nula'] = this['metalNamed']['nula'] || {};
-  this['metalNamed']['nula']['docsCreateNulaHtml'] = docsCreateNulaHtml;
-  this['metalNamed']['nula']['templates'] = templates;
-  this['metal']['nula'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['nula'];
-
-  var docsCreateNulaHtml = function (_Component) {
-    babelHelpers.inherits(docsCreateNulaHtml, _Component);
-
-    function docsCreateNulaHtml() {
-      babelHelpers.classCallCheck(this, docsCreateNulaHtml);
-      return babelHelpers.possibleConstructorReturn(this, (docsCreateNulaHtml.__proto__ || Object.getPrototypeOf(docsCreateNulaHtml)).apply(this, arguments));
-    }
-
-    return docsCreateNulaHtml;
-  }(Component);
-
-  ;
-
-  Soy.register(docsCreateNulaHtml, templates);
-
-  this['metal']['docsCreateNulaHtml'] = docsCreateNulaHtml;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsDeploy.
-     * @public
-     */
-
-    goog.module('docsDeploy.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param266 = function param266() {
-        ie_open('h6');
-        itext('Sapien in monti palavris qui num significa nadis i pareci latim. in elementis m\xE9 pra quem \xE9 amistosis quis leo. Mais vale um bebadis conhecidiss, que um alcoolatra anonimiss. Ta deprimidis, eu conhe\xE7o uma cachacis que pode alegrar sua vidis.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        $templateAlias2({ code: 'alert(\'Hello World\');', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param266 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsDeploy.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsDeploy = function (_Component) {
-    babelHelpers.inherits(docsDeploy, _Component);
-
-    function docsDeploy() {
-      babelHelpers.classCallCheck(this, docsDeploy);
-      return babelHelpers.possibleConstructorReturn(this, (docsDeploy.__proto__ || Object.getPrototypeOf(docsDeploy)).apply(this, arguments));
-    }
-
-    return docsDeploy;
-  }(Component);
-
-  Soy.register(docsDeploy, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsDeploy'] = docsDeploy;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var docsDeploy = function (_Component) {
-    babelHelpers.inherits(docsDeploy, _Component);
-
-    function docsDeploy() {
-      babelHelpers.classCallCheck(this, docsDeploy);
-      return babelHelpers.possibleConstructorReturn(this, (docsDeploy.__proto__ || Object.getPrototypeOf(docsDeploy)).apply(this, arguments));
-    }
-
-    return docsDeploy;
-  }(Component);
-
-  ;
-
-  Soy.register(docsDeploy, templates);
-
-  this['metal']['docsDeploy'] = docsDeploy;
-}).call(this);
-'use strict';
-
-(function () {
-  /* jshint ignore:start */
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-
-  var templates;
-  goog.loadModule(function (exports) {
-
-    // This file was automatically generated from index.soy.
-    // Please don't edit this file by hand.
-
-    /**
-     * @fileoverview Templates in namespace docsDevelop.
-     * @public
-     */
-
-    goog.module('docsDevelop.incrementaldom');
-
-    /** @suppress {extraRequire} */
-    var soy = goog.require('soy');
-    /** @suppress {extraRequire} */
-    var soydata = goog.require('soydata');
-    /** @suppress {extraRequire} */
-    goog.require('goog.i18n.bidi');
-    /** @suppress {extraRequire} */
-    goog.require('goog.asserts');
-    /** @suppress {extraRequire} */
-    goog.require('goog.string');
-    var IncrementalDom = goog.require('incrementaldom');
-    var ie_open = IncrementalDom.elementOpen;
-    var ie_close = IncrementalDom.elementClose;
-    var ie_void = IncrementalDom.elementVoid;
-    var ie_open_start = IncrementalDom.elementOpenStart;
-    var ie_open_end = IncrementalDom.elementOpenEnd;
-    var itext = IncrementalDom.text;
-    var iattr = IncrementalDom.attr;
-
-    var $templateAlias2 = Soy.getTemplate('ElectricCode.incrementaldom', 'render');
-
-    var $templateAlias1 = Soy.getTemplate('guide.incrementaldom', 'render');
-
-    /**
-     * @param {Object<string, *>=} opt_data
-     * @param {(null|undefined)=} opt_ignored
-     * @param {Object<string, *>=} opt_ijData
-     * @return {void}
-     * @suppress {checkTypes}
-     */
-    function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param256 = function param256() {
-        ie_open('h6');
-        itext('Nullam volutpat risus nec leo commodo, ut interdum diam laoreet. Sed non consequat odio. Todo mundo v\xEA os porris que eu tomo, mas ningu\xE9m v\xEA os tombis que eu levo! Quem num gosta di m\xE9, boa gente num \xE9.');
-        ie_close('h6');
-        ie_open('article', null, null, 'id', 'article1');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        $templateAlias2({ code: 'console.info(\'Hola Mundo\');', mode: 'javascript' }, null, opt_ijData);
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article2');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-        ie_open('article', null, null, 'id', 'article3');
-        ie_open('h2');
-        itext('Lorem ipsum dolor sit amet');
-        ie_close('h2');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_open('p');
-        itext('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur nulla libero, eleifend in euismod eget, fringilla id diam. Proin quis interdum ipsum. Fusce eros metus, hendrerit ut egestas nec, sagittis id velit.');
-        ie_close('p');
-        ie_close('article');
-      };
-      $templateAlias1(soy.$$assignDefaults({ content: param256 }, opt_data), null, opt_ijData);
-    }
-    exports.render = $render;
-    if (goog.DEBUG) {
-      $render.soyTemplateName = 'docsDevelop.render';
-    }
-
-    exports.render.params = [];
-    exports.render.types = {};
-    templates = exports;
-    return exports;
-  });
-
-  var docsDevelop = function (_Component) {
-    babelHelpers.inherits(docsDevelop, _Component);
-
-    function docsDevelop() {
-      babelHelpers.classCallCheck(this, docsDevelop);
-      return babelHelpers.possibleConstructorReturn(this, (docsDevelop.__proto__ || Object.getPrototypeOf(docsDevelop)).apply(this, arguments));
-    }
-
-    return docsDevelop;
-  }(Component);
-
-  Soy.register(docsDevelop, templates);
-  this['metalNamed']['index'] = this['metalNamed']['index'] || {};
-  this['metalNamed']['index']['docsDevelop'] = docsDevelop;
-  this['metalNamed']['index']['templates'] = templates;
-  this['metal']['index'] = templates;
-  /* jshint ignore:end */
-}).call(this);
-'use strict';
-
-(function () {
-  var Component = this['metal']['component'];
-  var Soy = this['metal']['Soy'];
-  var templates = this['metal']['index'];
-
-  var docsDevelop = function (_Component) {
-    babelHelpers.inherits(docsDevelop, _Component);
-
-    function docsDevelop() {
-      babelHelpers.classCallCheck(this, docsDevelop);
-      return babelHelpers.possibleConstructorReturn(this, (docsDevelop.__proto__ || Object.getPrototypeOf(docsDevelop)).apply(this, arguments));
-    }
-
-    return docsDevelop;
-  }(Component);
-
-  ;
-
-  Soy.register(docsDevelop, templates);
-
-  this['metal']['docsDevelop'] = docsDevelop;
 }).call(this);
 }).call(this);
 //# sourceMappingURL=bundle.js.map
