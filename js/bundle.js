@@ -1712,10 +1712,20 @@ babelHelpers;
   }
 
   this['metalNamed']['coreNamed']['isDocument'] = isDocument; /**
-                                                               * Returns true if value is a dom element.
+                                                               * Returns true if value is a document-fragment.
                                                                * @param {*} val
                                                                * @return {boolean}
                                                                */
+
+  function isDocumentFragment(val) {
+    return val && (typeof val === 'undefined' ? 'undefined' : babelHelpers.typeof(val)) === 'object' && val.nodeType === 11;
+  }
+
+  this['metalNamed']['coreNamed']['isDocumentFragment'] = isDocumentFragment; /**
+                                                                               * Returns true if value is a dom element.
+                                                                               * @param {*} val
+                                                                               * @return {boolean}
+                                                                               */
 
   function isElement(val) {
     return val && (typeof val === 'undefined' ? 'undefined' : babelHelpers.typeof(val)) === 'object' && val.nodeType === 1;
@@ -1837,6 +1847,9 @@ babelHelpers;
     * @return {boolean}
     */
 			value: function equal(arr1, arr2) {
+				if (arr1 === arr2) {
+					return true;
+				}
 				if (arr1.length !== arr2.length) {
 					return false;
 				}
@@ -3873,6 +3886,7 @@ babelHelpers;
 (function () {
 	var isDef = this['metalNamed']['metal']['isDef'];
 	var isDocument = this['metalNamed']['metal']['isDocument'];
+	var isDocumentFragment = this['metalNamed']['metal']['isDocumentFragment'];
 	var isElement = this['metalNamed']['metal']['isElement'];
 	var isObject = this['metalNamed']['metal']['isObject'];
 	var isString = this['metalNamed']['metal']['isString'];
@@ -4561,7 +4575,7 @@ babelHelpers;
   * @return {Element} The converted element, or null if none was found.
   */
 	function toElement(selectorOrElement) {
-		if (isElement(selectorOrElement) || isDocument(selectorOrElement)) {
+		if (isElement(selectorOrElement) || isDocument(selectorOrElement) || isDocumentFragment(selectorOrElement)) {
 			return selectorOrElement;
 		} else if (isString(selectorOrElement)) {
 			if (selectorOrElement[0] === '#' && selectorOrElement.indexOf(' ') === -1) {
@@ -5680,6 +5694,20 @@ babelHelpers;
   */
 
 	var Config = {
+		/**
+   * Adds the `internal` flag to the `State` configuration.
+   * @param {boolean} required Flag to set "internal" to. True by default.
+   * @return {!Object} `State` configuration object.
+   */
+		internal: function internal() {
+			var _internal = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+			return mergeConfig(this, {
+				internal: _internal
+			});
+		},
+
+
 		/**
    * Adds the `required` flag to the `State` configuration.
    * @param {boolean} required Flag to set "required" to. True by default.
@@ -13969,11 +13997,13 @@ babelHelpers;
 'use strict';
 
 (function () {
+	var ComponentRegistry = this['metalNamed']['component']['ComponentRegistry'];
 	var isFunction = this['metalNamed']['metal']['isFunction'];
 	var isObject = this['metalNamed']['metal']['isObject'];
 	var isString = this['metalNamed']['metal']['isString'];
 	var object = this['metalNamed']['metal']['object'];
-	var ComponentRegistry = this['metalNamed']['component']['ComponentRegistry'];
+	var validators = this['metalNamed']['state']['validators'];
+	var Config = this['metalNamed']['state']['Config'];
 	var HTML2IncDom = this['metal']['withParser'];
 	var IncrementalDomRenderer = this['metal']['IncrementalDomRenderer'];
 	var SoyAop = this['metal']['SoyAop'];
@@ -14241,8 +14271,10 @@ babelHelpers;
 
 	this['metal']['Soy'] = soyRenderer_;
 	this['metalNamed']['Soy'] = this['metalNamed']['Soy'] || {};
+	this['metalNamed']['Soy']['Config'] = Config;
 	this['metalNamed']['Soy']['Soy'] = soyRenderer_;
 	this['metalNamed']['Soy']['SoyAop'] = SoyAop;
+	this['metalNamed']['Soy']['validators'] = validators;
 }).call(this);
 'use strict';
 
@@ -16868,6 +16900,7 @@ babelHelpers;
 				var articleContainer = this.articleContainer,
 				    articleSelector = this.articleSelector,
 				    element = this.element,
+				    offsetBottom = this.offsetBottom,
 				    offsetTop = this.offsetTop,
 				    titleSelector = this.titleSelector;
 
@@ -16890,8 +16923,24 @@ babelHelpers;
 
 					this.affix = new metal.Affix({
 						element: element,
+						offsetBottom: offsetBottom,
 						offsetTop: offsetTop
 					});
+				}
+			}
+		}, {
+			key: 'disposed',
+			value: function disposed() {
+				var affix = this.affix,
+				    progress = this.progress;
+
+
+				if (affix) {
+					affix.dispose();
+				}
+
+				if (progress) {
+					progress.dispose();
 				}
 			}
 		}]);
@@ -16909,6 +16958,10 @@ babelHelpers;
 		articleSelector: {
 			validator: core.isString,
 			value: 'article'
+		},
+
+		offsetBottom: {
+			validator: core.isNumber
 		},
 
 		offsetTop: {
@@ -20468,7 +20521,7 @@ babelHelpers;
 
 
 				if (input) {
-					var autocomplete = new Autocomplete({
+					this.autocomplete = new Autocomplete({
 						data: this.search_.bind(this),
 						format: this.format_.bind(this),
 						inputElement: input,
@@ -20496,6 +20549,16 @@ babelHelpers;
 					textPrimary: '<a class="autocomplete-link" href="' + url + '">\n\t\t\t\t<div class="autocomplete-result">\n\t\t\t\t\t<p class="autocomplete-title">' + title + '</p>\n\t\t\t\t\t<p class="autocomplete-text">' + description + '</p>\n\t\t\t\t</div>\n\t\t\t</a>',
 					url: url
 				};
+			}
+		}, {
+			key: 'disposed',
+			value: function disposed() {
+				var autocomplete = this.autocomplete;
+
+
+				if (autocomplete) {
+					autocomplete.dispose();
+				}
 			}
 		}]);
 		return ElectricSearchAutocomplete;
@@ -20712,15 +20775,15 @@ babelHelpers;
       var localListItemActiveClasses__soy14 = ($$temp = opt_data.listItemActiveClasses) == null ? 'active' : $$temp;
       if (opt_data.section.children) {
         ie_open('ul', null, null, 'class', ($$temp = opt_data.elementClasses) == null ? '' : $$temp);
-        var pageList41 = opt_data.section.children;
-        var pageListLen41 = pageList41.length;
-        for (var pageIndex41 = 0; pageIndex41 < pageListLen41; pageIndex41++) {
-          var pageData41 = pageList41[pageIndex41];
-          if (!pageData41.hidden) {
-            ie_open('li', null, null, 'class', (($$temp = opt_data.listItemClasses) == null ? '' : $$temp) + (pageData41.active ? ' ' + localListItemActiveClasses__soy14 : ''));
-            soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), localAnchorVariant__soy12, false)(soy.$$assignDefaults({ page: pageData41 }, opt_data), null, opt_ijData);
+        var pageList42 = opt_data.section.children;
+        var pageListLen42 = pageList42.length;
+        for (var pageIndex42 = 0; pageIndex42 < pageListLen42; pageIndex42++) {
+          var pageData42 = pageList42[pageIndex42];
+          if (!pageData42.hidden) {
+            ie_open('li', null, null, 'class', (($$temp = opt_data.listItemClasses) == null ? '' : $$temp) + (pageData42.active ? ' ' + localListItemActiveClasses__soy14 : ''));
+            soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), localAnchorVariant__soy12, false)(soy.$$assignDefaults({ index: pageIndex42, page: pageData42 }, opt_data), null, opt_ijData);
             if (!opt_data.depth || localCurrentDepth__soy13 + 1 < opt_data.depth) {
-              $render({ anchorVariant: localAnchorVariant__soy12, currentDepth: localCurrentDepth__soy13 + 1, currentURL: opt_data.currentURL, depth: opt_data.depth, elementClasses: opt_data.elementClasses, linkClasses: opt_data.linkClasses, listItemActiveClasses: opt_data.listItemActiveClasses, listItemClasses: opt_data.listItemClasses, section: pageData41 }, null, opt_ijData);
+              $render({ anchorVariant: localAnchorVariant__soy12, currentDepth: localCurrentDepth__soy13 + 1, currentURL: opt_data.currentURL, depth: opt_data.depth, elementClasses: opt_data.elementClasses, linkClasses: opt_data.linkClasses, listItemActiveClasses: opt_data.listItemActiveClasses, listItemClasses: opt_data.listItemClasses, section: pageData42 }, null, opt_ijData);
             }
             ie_close('li');
           }
@@ -20740,7 +20803,7 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function __deltemplate_s44_b83841ac(opt_data, opt_ignored, opt_ijData) {
+    function __deltemplate_s45_b83841ac(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
       if (opt_data.page.url || opt_data.page.redirect) {
         ie_open('a', null, null, 'class', ($$temp = opt_data.linkClasses) == null ? '' : $$temp, 'href', ($$temp = opt_data.page.redirect) == null ? opt_data.page.url : $$temp);
@@ -20756,11 +20819,11 @@ babelHelpers;
         ie_close('span');
       }
     }
-    exports.__deltemplate_s44_b83841ac = __deltemplate_s44_b83841ac;
+    exports.__deltemplate_s45_b83841ac = __deltemplate_s45_b83841ac;
     if (goog.DEBUG) {
-      __deltemplate_s44_b83841ac.soyTemplateName = 'ElectricNavigation.__deltemplate_s44_b83841ac';
+      __deltemplate_s45_b83841ac.soyTemplateName = 'ElectricNavigation.__deltemplate_s45_b83841ac';
     }
-    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'basic', 0, __deltemplate_s44_b83841ac);
+    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricNavigation.anchor.idom'), 'basic', 0, __deltemplate_s45_b83841ac);
 
     exports.render.params = ["section", "anchorVariant", "currentDepth", "currentURL", "depth", "elementClasses", "linkClasses", "listItemActiveClasses", "listItemClasses"];
     exports.render.types = { "section": "any", "anchorVariant": "any", "currentDepth": "any", "currentURL": "any", "depth": "any", "elementClasses": "any", "linkClasses": "any", "listItemActiveClasses": "any", "listItemClasses": "any" };
@@ -21007,22 +21070,22 @@ babelHelpers;
         ie_close('p');
       }
       if (opt_data.results) {
-        var resultList103 = opt_data.results;
-        var resultListLen103 = resultList103.length;
-        for (var resultIndex103 = 0; resultIndex103 < resultListLen103; resultIndex103++) {
-          var resultData103 = resultList103[resultIndex103];
+        var resultList104 = opt_data.results;
+        var resultListLen104 = resultList104.length;
+        for (var resultIndex104 = 0; resultIndex104 < resultListLen104; resultIndex104++) {
+          var resultData104 = resultList104[resultIndex104];
           ie_open('div', null, null, 'class', 'search-result');
-          if (resultData103.icon) {
+          if (resultData104.icon) {
             ie_open('div', null, null, 'class', 'search-result-icon');
-            ie_void('span', null, null, 'class', 'icon-16-' + resultData103.icon);
+            ie_void('span', null, null, 'class', 'icon-16-' + resultData104.icon);
             ie_close('div');
           }
-          ie_open('a', null, null, 'class', 'search-result-link', 'href', resultData103.url);
-          var dyn5 = resultData103.title;
+          ie_open('a', null, null, 'class', 'search-result-link', 'href', resultData104.url);
+          var dyn5 = resultData104.title;
           if (typeof dyn5 == 'function') dyn5();else if (dyn5 != null) itext(dyn5);
           ie_close('a');
           ie_open('p', null, null, 'class', 'search-result-text');
-          var dyn6 = resultData103.description;
+          var dyn6 = resultData104.description;
           if (typeof dyn6 == 'function') dyn6();else if (dyn6 != null) itext(dyn6);
           ie_close('p');
           ie_close('div');
@@ -21246,20 +21309,20 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-lg-10 col-lg-offset-3 col-md-16 col-md-offset-0');
       if (opt_data.updates) {
-        var updateList128 = opt_data.updates;
-        var updateListLen128 = updateList128.length;
-        for (var updateIndex128 = 0; updateIndex128 < updateListLen128; updateIndex128++) {
-          var updateData128 = updateList128[updateIndex128];
+        var updateList129 = opt_data.updates;
+        var updateListLen129 = updateList129.length;
+        for (var updateIndex129 = 0; updateIndex129 < updateListLen129; updateIndex129++) {
+          var updateData129 = updateList129[updateIndex129];
           ie_open('section', null, null, 'class', 'update');
           ie_open('div', null, null, 'class', 'row update-row');
-          ie_open('div', null, null, 'class', 'col-sm-3 ' + (updateData128.major ? 'major' : 'minor') + '-update update-timeline');
+          ie_open('div', null, null, 'class', 'col-sm-3 ' + (updateData129.major ? 'major' : 'minor') + '-update update-timeline');
           ie_open('div', null, null, 'class', 'update-point');
-          var dyn7 = updateData128.version;
+          var dyn7 = updateData129.version;
           if (typeof dyn7 == 'function') dyn7();else if (dyn7 != null) itext(dyn7);
           ie_close('div');
           ie_close('div');
           ie_open('div', null, null, 'class', 'col-sm-13 update-features');
-          $features(soy.$$assignDefaults({ features: updateData128.features }, opt_data), null, opt_ijData);
+          $features(soy.$$assignDefaults({ features: updateData129.features }, opt_data), null, opt_ijData);
           ie_close('div');
           ie_close('div');
           ie_close('section');
@@ -21282,13 +21345,13 @@ babelHelpers;
      */
     function $features(opt_data, opt_ignored, opt_ijData) {
       var $$temp;
-      var localFeatureVariant__soy132 = ($$temp = opt_data.featureVariant) == null ? 'basic' : $$temp;
+      var localFeatureVariant__soy133 = ($$temp = opt_data.featureVariant) == null ? 'basic' : $$temp;
       ie_open('div', null, null, 'class', 'row');
-      var featureList136 = opt_data.features;
-      var featureListLen136 = featureList136.length;
-      for (var featureIndex136 = 0; featureIndex136 < featureListLen136; featureIndex136++) {
-        var featureData136 = featureList136[featureIndex136];
-        soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), localFeatureVariant__soy132, false)(soy.$$assignDefaults({ feature: featureData136 }, opt_data), null, opt_ijData);
+      var featureList137 = opt_data.features;
+      var featureListLen137 = featureList137.length;
+      for (var featureIndex137 = 0; featureIndex137 < featureListLen137; featureIndex137++) {
+        var featureData137 = featureList137[featureIndex137];
+        soy.$$getDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), localFeatureVariant__soy133, false)(soy.$$assignDefaults({ feature: featureData137 }, opt_data), null, opt_ijData);
       }
       ie_close('div');
     }
@@ -21304,7 +21367,7 @@ babelHelpers;
      * @return {void}
      * @suppress {checkTypes}
      */
-    function __deltemplate_s139_5080d024(opt_data, opt_ignored, opt_ijData) {
+    function __deltemplate_s140_5080d024(opt_data, opt_ignored, opt_ijData) {
       ie_open('div', null, null, 'class', 'col-xs-16 col-sm-8 update-feature');
       ie_open('div', null, null, 'class', 'feature-topper');
       ie_void('span', null, null, 'class', 'feature-icon icon-16-' + opt_data.feature.icon);
@@ -21326,11 +21389,11 @@ babelHelpers;
       ie_close('div');
       ie_close('div');
     }
-    exports.__deltemplate_s139_5080d024 = __deltemplate_s139_5080d024;
+    exports.__deltemplate_s140_5080d024 = __deltemplate_s140_5080d024;
     if (goog.DEBUG) {
-      __deltemplate_s139_5080d024.soyTemplateName = 'ElectricUpdates.__deltemplate_s139_5080d024';
+      __deltemplate_s140_5080d024.soyTemplateName = 'ElectricUpdates.__deltemplate_s140_5080d024';
     }
-    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), 'basic', 0, __deltemplate_s139_5080d024);
+    soy.$$registerDelegateFn(soy.$$getDelTemplateId('ElectricUpdates.feature.idom'), 'basic', 0, __deltemplate_s140_5080d024);
 
     exports.render.params = ["featureVariant", "updates"];
     exports.render.types = { "featureVariant": "any", "updates": "any" };
@@ -21731,10 +21794,15 @@ babelHelpers;
 		babelHelpers.createClass(Sidebar, [{
 			key: 'attached',
 			value: function attached() {
-				new Toggler({
+				this._toggler = new Toggler({
 					content: '.sidebar-toggler-content',
 					header: '.sidebar-header'
 				});
+			}
+		}, {
+			key: 'disposed',
+			value: function disposed() {
+				this._toggler.dispose();
 			}
 		}]);
 		return Sidebar;
@@ -22029,7 +22097,9 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'docs-content col-xs-16 col-md-9');
       var dyn9 = opt_data.content;
       if (typeof dyn9 == 'function') dyn9();else if (dyn9 != null) itext(dyn9);
-      $contribute(opt_data, null, opt_ijData);
+      if (opt_data.site.githubRepo) {
+        $contribute(opt_data, null, opt_ijData);
+      }
       ie_close('div');
       ie_open('nav', null, null, 'class', 'col-xs-16 col-md-offset-2 col-md-5');
       ie_open('div', null, null, 'class', 'docs-nav-container');
@@ -22053,7 +22123,6 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $contribute(opt_data, opt_ignored, opt_ijData) {
-      var $$temp;
       ie_open('div', null, null, 'class', 'guide-github');
       ie_open('div', null, null, 'class', 'guide-github-img');
       ie_void('span', null, null, 'class', 'icon-16-github');
@@ -22061,7 +22130,7 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'guide-github-text');
       ie_open('p');
       itext('Contribute on Github! ');
-      ie_open('a', null, null, 'href', (($$temp = opt_data.site.repo) == null ? '' : $$temp) + '/tree/master/' + opt_data.page.srcFilePath, 'class', 'docs-github-link', 'target', '_blank');
+      ie_open('a', null, null, 'href', 'https://github.com/' + opt_data.site.githubRepo + '/tree/master/' + opt_data.page.srcFilePath, 'class', 'docs-github-link', 'target', '_blank');
       itext('Edit this section');
       ie_close('a');
       itext('.');
@@ -22076,8 +22145,8 @@ babelHelpers;
 
     exports.render.params = ["page", "site"];
     exports.render.types = { "page": "any", "site": "any" };
-    exports.guide.params = ["page", "content"];
-    exports.guide.types = { "page": "any", "content": "any" };
+    exports.guide.params = ["page", "site", "content"];
+    exports.guide.types = { "page": "any", "site": "any", "content": "any" };
     exports.contribute.params = ["page", "site"];
     exports.contribute.types = { "page": "any", "site": "any" };
     templates = exports;
@@ -22351,11 +22420,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param110 = function param110() {
+      var param112 = function param112() {
         $header(opt_data, null, opt_ijData);
         $footer(null, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param110 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param112 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -22381,15 +22450,11 @@ babelHelpers;
       if (typeof dyn13 == 'function') dyn13();else if (dyn13 != null) itext(dyn13);
       ie_close('h2');
       ie_open('div', null, null, 'class', 'header-cta');
-      ie_open('a', null, null, 'href', 'docs/getting_started', 'class', 'btn btn-accent');
+      ie_open('a', null, null, 'href', 'docs/getting-started.html', 'class', 'btn btn-accent');
       itext('Get started');
       ie_close('a');
       ie_close('div');
       ie_close('div');
-      ie_open('p', null, null, 'class', 'gh-btns');
-      ie_void('iframe', null, null, 'src', 'http://ghbtns.com/github-btn.html?user=wedeploy&repo=electric&type=watch&count=true&size=large', 'allowtransparency', 'true', 'frameborder', '0', 'scrolling', '0', 'width', '150', 'height', '30');
-      ie_void('iframe', null, null, 'src', 'http://ghbtns.com/github-btn.html?user=wedeploy&repo=electric&type=fork&count=true&size=large', 'allowtransparency', 'true', 'frameborder', '0', 'scrolling', '0', 'width', '150', 'height', '30');
-      ie_close('p');
       ie_close('header');
     }
     exports.header = $header;
@@ -22578,7 +22643,7 @@ babelHelpers;
       ie_open('div', null, null, 'class', 'container');
       ie_open('div', null, null, 'class', 'row');
       ie_open('p', null, null, 'class', 'footer-description col-md-6 col-md-offset-2');
-      itext('Copyright \xA9 2016 ');
+      itext('Copyright \xA9 2017 ');
       ie_open('a', null, null, 'href', 'https://liferay.com');
       itext('Liferay, Inc');
       ie_close('a');
@@ -22707,8 +22772,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param132 = function param132() {
+      var param134 = function param134() {
         ie_open('h4');
         itext('References');
         ie_close('h4');
@@ -22756,7 +22820,6 @@ babelHelpers;
         ie_open('a', null, null, 'href', 'https://www.sitepoint.com/basics-capybara-improving-tests/');
         itext('Tips on improving tests with capybara');
         ie_close('a');
-        itext('   test test test');
         ie_close('p');
         ie_open('p');
         ie_open('a', null, null, 'href', 'http://coryschires.com/ten-tips-for-writing-better-cucumber-steps/');
@@ -22777,16 +22840,20 @@ babelHelpers;
         ie_close('li');
         ie_close('ul');
         ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param132 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param134 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
       $render.soyTemplateName = 'docsCapybaraHtml.render';
     }
 
-    exports.render.params = [];
-    exports.render.types = {};
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
     templates = exports;
     return exports;
   });
@@ -22860,8 +22927,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param137 = function param137() {
+      var param143 = function param143() {
         ie_open('h4');
         itext('References');
         ie_close('h4');
@@ -23005,16 +23071,20 @@ babelHelpers;
         ie_close('li');
         ie_close('ul');
         ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param137 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param143 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
       $render.soyTemplateName = 'docsCucumberHtml.render';
     }
 
-    exports.render.params = [];
-    exports.render.types = {};
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
     templates = exports;
     return exports;
   });
@@ -23134,8 +23204,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param147 = function param147() {
+      var param157 = function param157() {
         ie_open('article', null, null, 'id', 'article1');
         ie_open('h2');
         itext('Setup Environment');
@@ -23238,16 +23307,20 @@ babelHelpers;
         ie_close('li');
         ie_close('ul');
         ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param147 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param157 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
       $render.soyTemplateName = 'docsGettingStartedHtml.render';
     }
 
-    exports.render.params = [];
-    exports.render.types = {};
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
     templates = exports;
     return exports;
   });
@@ -23343,8 +23416,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      opt_data = opt_data || {};
-      var param179 = function param179() {
+      var param195 = function param195() {
         ie_open('h4');
         itext('References');
         ie_close('h4');
@@ -23474,16 +23546,20 @@ babelHelpers;
         itext('Can you figure out how to use cucumber tags to run a single scenario?');
         ie_close('p');
         ie_close('article');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.page.title);
+        ie_close('input');
+        ie_open('input', null, null, 'type', 'hidden', 'value', opt_data.site.title);
+        ie_close('input');
       };
-      $templateAlias1(soy.$$assignDefaults({ content: param179 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ content: param195 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
       $render.soyTemplateName = 'docsRubyHtml.render';
     }
 
-    exports.render.params = [];
-    exports.render.types = {};
+    exports.render.params = ["page", "site"];
+    exports.render.types = { "page": "any", "site": "any" };
     templates = exports;
     return exports;
   });
@@ -23583,11 +23659,11 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param153 = function param153() {
+      var param167 = function param167() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         $topics(opt_data, null, opt_ijData);
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param153 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param167 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
@@ -23610,7 +23686,10 @@ babelHelpers;
       itext('Docs');
       ie_close('h1');
       ie_open('p', null, null, 'class', 'docs-home-top-description');
-      itext('Start learning how to leverage the power of Cucumber in your project.');
+      itext('Start learning how to leverage the power of ');
+      var dyn14 = opt_data.site.title;
+      if (typeof dyn14 == 'function') dyn14();else if (dyn14 != null) itext(dyn14);
+      itext(' in your project.');
       ie_close('p');
       ie_close('div');
       ie_close('div');
@@ -23639,25 +23718,28 @@ babelHelpers;
       ie_open('h2', null, null, 'class', 'docs-home-middle-subtitle');
       itext('Choose a Guide');
       ie_close('h2');
+      ie_open('p', null, null, 'class', 'docs-home-middle-description');
+      itext('Each one provide step by step coverage for every core feature.');
+      ie_close('p');
       ie_close('section');
       ie_close('div');
       ie_close('div');
       ie_open('div', null, null, 'class', 'row');
       ie_open('div', null, null, 'class', 'col-md-13 col-md-offset-3 col-xs-16');
       ie_open('div', null, null, 'class', 'row');
-      var topicList174 = opt_data.site.index.children[1].children;
-      var topicListLen174 = topicList174.length;
-      for (var topicIndex174 = 0; topicIndex174 < topicListLen174; topicIndex174++) {
-        var topicData174 = topicList174[topicIndex174];
-        if (!topicData174.hidden) {
+      var topicList190 = opt_data.site.index.children[1].children;
+      var topicListLen190 = topicList190.length;
+      for (var topicIndex190 = 0; topicIndex190 < topicListLen190; topicIndex190++) {
+        var topicData190 = topicList190[topicIndex190];
+        if (!topicData190.hidden) {
           ie_open('div', null, null, 'class', 'col-md-6 col-xs-16');
-          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData174.url);
+          ie_open('a', null, null, 'class', 'topic radial-out', 'href', topicData190.url);
           ie_open('div', null, null, 'class', 'topic-icon');
-          ie_void('span', null, null, 'class', 'icon-16-' + topicData174.icon);
+          ie_void('span', null, null, 'class', 'icon-16-' + topicData190.icon);
           ie_close('div');
           ie_open('h3', null, null, 'class', 'topic-title');
-          var dyn14 = topicData174.title;
-          if (typeof dyn14 == 'function') dyn14();else if (dyn14 != null) itext(dyn14);
+          var dyn15 = topicData190.title;
+          if (typeof dyn15 == 'function') dyn15();else if (dyn15 != null) itext(dyn15);
           ie_close('h3');
           ie_close('a');
           ie_close('div');
@@ -23778,7 +23860,7 @@ babelHelpers;
      * @suppress {checkTypes}
      */
     function $render(opt_data, opt_ignored, opt_ijData) {
-      var param185 = function param185() {
+      var param205 = function param205() {
         $templateAlias2({ section: opt_data.site.index.children[1] }, null, opt_ijData);
         ie_open('div', null, null, 'class', 'sidebar-offset');
         ie_open('div', null, null, 'class', 'container-hybrid docs-home-top');
@@ -23803,7 +23885,7 @@ babelHelpers;
         ie_close('div');
         ie_close('div');
       };
-      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param185 }, opt_data), null, opt_ijData);
+      $templateAlias1(soy.$$assignDefaults({ elementClasses: 'docs', content: param205 }, opt_data), null, opt_ijData);
     }
     exports.render = $render;
     if (goog.DEBUG) {
