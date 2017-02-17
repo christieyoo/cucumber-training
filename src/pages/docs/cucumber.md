@@ -51,7 +51,7 @@ In the following exercises, you will be writing the test steps in the .feature f
 
 To begin:
 * Create a 'cucumber-practice' folder.
-* Go to the command line and run `cucumber --init` from this directory.
+* Go to the command line and run `cucumber --init` from this directory.  Examine the default folder structure and files that were created.
 * Create a file called 'practice.feature' in the feature directory.
 
 Write these scenarios in practice.feature.  Each scenario should contain at least one of each [Given-When-Then].
@@ -61,7 +61,7 @@ Write these scenarios in practice.feature.  Each scenario should contain at leas
 2. Write a scenario that does a google search for 'Liferay', then navigates to Liferay home page by clicking on the correct search result.
 
 Run the cucumber scenarios:
-* Add the following to env.rb
+* Add the following to env.rb (in cucumber-practice/features/support)
 
 ```ruby
 require 'selenium-webdriver'
