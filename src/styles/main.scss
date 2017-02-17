@@ -1,0 +1,21 @@
+$accent: green;
+
+@import "marble";
+
+// Root
+@import "templates/root";
+
+// Landing
+@import "templates/landing";
+
+// Docs
+@import "templates/docs";
+
+// Guide
+@import "templates/guide";
+
+// Search
+@import "templates/search";
+
+// Tutorial
+@import "templates/tutorial";
